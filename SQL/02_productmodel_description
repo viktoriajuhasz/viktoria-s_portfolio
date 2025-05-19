@@ -1,4 +1,4 @@
-# Retrieves product model IDs with their English descriptions.
+-- Retrieves product model IDs with their English descriptions.
 
 SELECT 
     productmodelproductdescriptionculture.productmodelid, 
