@@ -1,0 +1,24 @@
+-- Calculates total sales per salesperson in 2014, including commission percentage and currency code (defaults to USD if NULL).
+
+SELECT
+    salespersonid,
+    ROUND(SUM((orderqty * (unitprice * (1 - unitpricediscount)))), 2) AS ordertotalsum,
+    commissionpct,
+    CASE
+        WHEN tocurrencycode IS NULL THEN 'USD'
+        ELSE tocurrencycode
+    END AS tocurrencycode
+FROM
+    salesorderheader
+    JOIN salesorderdetail ON salesorderheader.salesorderid = salesorderdetail.salesorderid
+    JOIN salesperson ON salesperson.businessentityid = salespersonid
+    LEFT JOIN currencyrate ON salesorderheader.currencyrateid = currencyrate.currencyrateid
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31'
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+GROUP BY
+    salespersonid, tocurrencycode
+ORDER BY
+    tocurrencycode ASC, ordertotalsum DESC;
