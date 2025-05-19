@@ -1,4 +1,4 @@
-# Calculates total quantity ordered for each product.
+-- Calculates total quantity ordered for each product.
 
 SELECT 
     product.productid, 
