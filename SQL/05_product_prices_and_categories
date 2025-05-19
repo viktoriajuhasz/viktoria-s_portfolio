@@ -1,0 +1,19 @@
+# Lists products with categories, subcategories, and list prices.                        
+
+products_prices = """
+SELECT 
+    product.productid, 
+    productcategory.name AS category, 
+    productsubcategory.name AS subcategory, 
+    product.listprice 
+FROM 
+    product
+    LEFT JOIN salesorderdetail 
+        ON salesorderdetail.productid = product.productid 
+    JOIN productsubcategory 
+        ON product.productsubcategoryid = productsubcategory.productsubcategoryid 
+    JOIN productcategory 
+        ON productcategory.productcategoryid = productsubcategory.productcategoryid 
+GROUP BY 
+    product.productid
+"""
