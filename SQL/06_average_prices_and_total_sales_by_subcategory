@@ -1,6 +1,5 @@
 #  Calculates average product price and total quantity sold by category and subcategory.
 
-prices_quantities = """
 WITH quantities_ordered AS (
     SELECT 
         product.productid, 
@@ -46,5 +45,4 @@ GROUP BY
     products_prices.category, 
     products_prices.subcategory 
 ORDER BY 
-    products_prices.category
-"""
+    products_prices.category;
