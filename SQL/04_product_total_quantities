@@ -1,0 +1,13 @@
+# Calculates total quantity ordered for each product.
+
+quantities_ordered = """
+SELECT 
+    product.productid, 
+    SUM(salesorderdetail.orderqty) AS quantity 
+FROM 
+    product 
+    JOIN salesorderdetail 
+        ON product.productid = salesorderdetail.productid 
+GROUP BY 
+    product.productid
+"""
