@@ -1,12 +1,17 @@
-# Calculates average product ratings and number of reviews per product. Name your variable rating_ranking.
+# Calculates average product ratings and number of reviews per product.
 
-rating_ranking = """ 
-
-    SELECT 
-        product.productid, product.name AS NAME, AVG(productreview.rating) AS avgrating, COUNT(productreview.rating) AS num_ratings 
-    FROM 
-        product JOIN productreview ON product.productid = productreview.productid 
-    GROUP BY product.productid 
-    ORDER BY avgrating DESC
-
-""" 
+rating_ranking = """
+SELECT 
+    product.productid, 
+    product.name AS name, 
+    AVG(productreview.rating) AS avgrating, 
+    COUNT(productreview.rating) AS num_ratings 
+FROM 
+    product 
+    JOIN productreview 
+        ON product.productid = productreview.productid 
+GROUP BY 
+    product.productid 
+ORDER BY 
+    avgrating DESC
+"""
