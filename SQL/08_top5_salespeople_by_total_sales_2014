@@ -1,4 +1,4 @@
-# Retrieves top 5 salespersons by total sales amount in 2014
+-- Retrieves top 5 salespersons by total sales amount in 2014
 
 SELECT
     salespersonid,
