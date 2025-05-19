@@ -1,6 +1,5 @@
 # Lists products with categories, subcategories, and list prices.                        
 
-products_prices = """
 SELECT 
     product.productid, 
     productcategory.name AS category, 
@@ -15,5 +14,4 @@ FROM
     JOIN productcategory 
         ON productcategory.productcategoryid = productsubcategory.productcategoryid 
 GROUP BY 
-    product.productid
-"""
+    product.productid;
