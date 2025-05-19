@@ -10,7 +10,7 @@ This project contains SQL queries developed as part of my Data Analyst training.
 
 This repository contains a set of SQL scripts that demonstrate key SQL skills including:
 - Writing complex queries involving multiple joins
-- Using aggregation functions like `SUM`, `AVG`, `COUNT` to generate insights
+- Using aggregation functions like SUM, `AVG`, `COUNT` to generate insights
 - Applying filters and grouping to answer real business questions
 - Utilizing Common Table Expressions (CTEs) for modular and readable queries
 - Handling NULL values and applying conditional logic
