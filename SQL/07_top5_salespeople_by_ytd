@@ -1,0 +1,10 @@
+# Lists the top 5 salespeople based on total year-to-date sales (SalesYTD).
+
+SELECT 
+    businessentityid, 
+    ROUND(salesytd, 2) 
+FROM 
+    salesperson 
+ORDER BY 
+    salesytd DESC 
+LIMIT 5;
