@@ -1,4 +1,4 @@
-#  Calculates average product price and total quantity sold by category and subcategory.
+--  Calculates average product price and total quantity sold by category and subcategory.
 
 WITH quantities_ordered AS (
     SELECT 
