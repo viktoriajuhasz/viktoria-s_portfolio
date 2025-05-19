@@ -1,0 +1,17 @@
+# Retrieves top 5 salespersons by total sales amount in 2014
+
+SELECT
+    salespersonid,
+    ROUND(SUM(subtotal), 2) AS totalsales
+FROM
+    salesorderheader
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31' 
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+GROUP BY 
+    salespersonid
+ORDER BY
+    totalsales DESC
+LIMIT 5;
