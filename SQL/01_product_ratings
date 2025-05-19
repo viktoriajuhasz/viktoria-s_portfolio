@@ -1,4 +1,4 @@
-# Calculates average product ratings and number of reviews per product.
+-- Calculates average product ratings and number of reviews per product.
 
 SELECT 
     product.productid, 
