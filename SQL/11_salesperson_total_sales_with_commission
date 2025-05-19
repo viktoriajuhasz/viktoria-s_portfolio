@@ -1,0 +1,19 @@
+# Calculates salesperson sales including commission percentages.  
+
+SELECT
+    salespersonid,
+    ROUND(SUM((orderqty * (unitprice * (1 - unitpricediscount)))), 2) AS ordertotalsum,
+    commissionpct
+FROM
+    salesorderheader
+    JOIN salesorderdetail ON salesorderheader.salesorderid = salesorderdetail.salesorderid
+    JOIN salesperson ON salesperson.businessentityid = salespersonid
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31'
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+GROUP BY
+    salespersonid
+ORDER BY
+    salespersonid;
