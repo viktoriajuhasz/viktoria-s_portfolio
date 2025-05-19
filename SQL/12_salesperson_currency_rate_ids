@@ -1,0 +1,18 @@
+# Retrieves salesperson IDs, sales order IDs, and corresponding currency rate details for orders in 2014.
+
+SELECT
+    salespersonid,
+    salesorderid,
+    salesorderheader.currencyrateid,
+    tocurrencycode
+FROM
+    salesorderheader
+    LEFT JOIN currencyrate ON salesorderheader.currencyrateid = currencyrate.currencyrateid
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31'
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+ORDER BY
+    salespersonid
+LIMIT 10;
