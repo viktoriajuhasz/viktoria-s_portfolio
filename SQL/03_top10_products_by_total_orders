@@ -1,6 +1,5 @@
 # Lists top 10 products by total order quantity with descriptions.
 
-description_totalorders = """
 WITH pd AS (
     SELECT 
         productmodelproductdescriptionculture.productmodelid, 
@@ -30,5 +29,4 @@ GROUP BY
     pd.description 
 ORDER BY 
     total_orders DESC 
-LIMIT 10
-"""
+LIMIT 10;
