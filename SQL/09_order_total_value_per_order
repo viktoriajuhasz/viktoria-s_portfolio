@@ -1,4 +1,4 @@
-# Calculates total order amount per sales order
+-- Calculates total order amount per sales order
 
 SELECT
     salesorderid,
