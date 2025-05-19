@@ -1,4 +1,4 @@
-# Retrieves product model IDs with their English descriptions. Name your variable productmodelid_description.
+# Retrieves product model IDs with their English descriptions.
 
 productmodelid_description = """ 
 
