@@ -1,4 +1,4 @@
-# Calculates salesperson sales including commission percentages.  
+-- Calculates salesperson sales including commission percentages.  
 
 SELECT
     salespersonid,
