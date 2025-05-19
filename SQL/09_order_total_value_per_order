@@ -1,0 +1,11 @@
+# Calculates total order amount per sales order
+
+SELECT
+    salesorderid,
+    SUM((unitprice - (unitprice / 100 * unitpricediscount)) * orderqty) AS ordertotal  
+FROM
+    salesorderdetail
+GROUP BY
+    salesorderid
+ORDER BY
+    salesorderid;
