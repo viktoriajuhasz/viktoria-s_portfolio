@@ -1,0 +1,30 @@
+# Calculates total sales per salesperson for 2014.
+
+WITH oo AS (
+    SELECT
+        salesorderheader.salesorderid,
+        salespersonid,
+        orderdate,
+        orderqty,
+        unitprice,
+        unitpricediscount
+    FROM
+        salesorderdetail
+        JOIN salesorderheader ON salesorderdetail.salesorderid = salesorderheader.salesorderid
+)
+
+SELECT
+    oo.salespersonid,
+    ROUND(SUM((orderqty * (unitprice * (1 - unitpricediscount)))), 2) AS ordertotalsum
+FROM
+    oo 
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31'
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+GROUP BY
+    oo.salespersonid 
+ORDER BY
+    ordertotalsum DESC 
+LIMIT 5;
