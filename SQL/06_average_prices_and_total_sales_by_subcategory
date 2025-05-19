@@ -1,0 +1,50 @@
+#  Calculates average product price and total quantity sold by category and subcategory.
+
+prices_quantities = """
+WITH quantities_ordered AS (
+    SELECT 
+        product.productid, 
+        SUM(salesorderdetail.orderqty) AS quantity 
+    FROM 
+        product 
+        JOIN salesorderdetail 
+            ON product.productid = salesorderdetail.productid 
+    GROUP BY 
+        product.productid
+),  
+
+products_prices AS (
+    SELECT 
+        product.productid, 
+        productcategory.name AS category, 
+        productsubcategory.name AS subcategory, 
+        product.listprice, 
+        orderqty, 
+        productsubcategory.productsubcategoryid 
+    FROM 
+        product 
+        JOIN salesorderdetail 
+            ON salesorderdetail.productid = product.productid 
+        JOIN productsubcategory 
+            ON product.productsubcategoryid = productsubcategory.productsubcategoryid 
+        JOIN productcategory 
+            ON productcategory.productcategoryid = productsubcategory.productcategoryid 
+    GROUP BY 
+        product.productid
+)
+
+SELECT 
+    products_prices.category, 
+    products_prices.subcategory, 
+    AVG(products_prices.listprice) AS average_price_in_subcategory, 
+    SUM(quantities_ordered.quantity) AS total_items_sold_in_subcategory 
+FROM 
+    quantities_ordered 
+    JOIN products_prices 
+        ON quantities_ordered.productid = products_prices.productid 
+GROUP BY 
+    products_prices.category, 
+    products_prices.subcategory 
+ORDER BY 
+    products_prices.category
+"""
