@@ -1,4 +1,5 @@
-# Name your variable rating_ranking 
+# Calculates average product ratings and number of reviews per product. Name your variable rating_ranking.
+
 rating_ranking = """ 
 
     SELECT 
@@ -7,4 +8,5 @@ rating_ranking = """
         product JOIN productreview ON product.productid = productreview.productid 
     GROUP BY product.productid 
     ORDER BY avgrating DESC
+
 """ 
