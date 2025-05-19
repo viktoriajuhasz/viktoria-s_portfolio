@@ -1,4 +1,4 @@
-# Calculates total sales per salesperson for 2014.
+-- Calculates total sales per salesperson for 2014.
 
 WITH oo AS (
     SELECT
