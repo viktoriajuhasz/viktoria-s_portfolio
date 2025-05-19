@@ -1,4 +1,4 @@
-# Lists the top 5 salespeople based on total year-to-date sales (SalesYTD).
+-- Lists the top 5 salespeople based on total year-to-date sales (SalesYTD).
 
 SELECT 
     businessentityid, 
