@@ -1,0 +1,11 @@
+# Retrieves product model IDs with their English descriptions. Name your variable productmodelid_description.
+
+productmodelid_description = """ 
+
+SELECT 
+    productmodelproductdescriptionculture.productmodelid, productdescription.description 
+FROM 
+    productmodelproductdescriptionculture JOIN productdescription ON productmodelproductdescriptionculture.productdescriptionid = productdescription.productdescriptionid 
+WHERE productmodelproductdescriptionculture.cultureid = 'en' 
+ 
+""" 
