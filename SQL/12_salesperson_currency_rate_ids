@@ -1,4 +1,4 @@
-# Retrieves salesperson IDs, sales order IDs, and corresponding currency rate details for orders in 2014.
+-- Retrieves salesperson IDs, sales order IDs, and corresponding currency rate details for orders in 2014.
 
 SELECT
     salespersonid,
