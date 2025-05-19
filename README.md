@@ -4,6 +4,8 @@
 
 Welcome to my collection of SQL queries built using the AdventureWorks sample database — a popular dataset for practicing SQL and business data analysis.
 
+This project contains SQL queries developed as part of my Data Analyst training.
+
 # About This Repository
 
 This repository contains a set of SQL scripts that demonstrate key SQL skills including:
