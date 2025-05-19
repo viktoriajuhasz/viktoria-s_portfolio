@@ -1,0 +1,20 @@
+# Retrieves salesperson IDs, sales order IDs, and currency codes for orders in 2014; defaults to 'USD' if currency code is missing.
+
+SELECT
+    salespersonid,
+    salesorderid, 
+    CASE
+        WHEN tocurrencycode IS NULL THEN 'USD'
+        ELSE tocurrencycode
+    END AS tocurrencycode
+FROM
+    salesorderheader
+    LEFT JOIN currencyrate ON salesorderheader.currencyrateid = currencyrate.currencyrateid
+WHERE
+    orderdate >= '2014-01-01'
+    AND orderdate <= '2014-12-31'
+    AND salespersonid IS NOT NULL
+    AND salespersonid <> ''
+ORDER BY
+    salespersonid 
+LIMIT 10;
