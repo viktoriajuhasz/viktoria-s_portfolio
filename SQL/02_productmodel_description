@@ -1,6 +1,5 @@
 # Retrieves product model IDs with their English descriptions.
 
-productmodelid_description = """
 SELECT 
     productmodelproductdescriptionculture.productmodelid, 
     productdescription.description 
@@ -9,5 +8,4 @@ FROM
     JOIN productdescription 
         ON productmodelproductdescriptionculture.productdescriptionid = productdescription.productdescriptionid 
 WHERE 
-    productmodelproductdescriptionculture.cultureid = 'en'
-"""
+    productmodelproductdescriptionculture.cultureid = 'en';
