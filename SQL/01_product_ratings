@@ -1,6 +1,5 @@
 # Calculates average product ratings and number of reviews per product.
 
-rating_ranking = """
 SELECT 
     product.productid, 
     product.name AS name, 
@@ -13,5 +12,4 @@ FROM
 GROUP BY 
     product.productid 
 ORDER BY 
-    avgrating DESC
-"""
+    avgrating DESC;
