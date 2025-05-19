@@ -1,4 +1,4 @@
-# Lists products with categories, subcategories, and list prices.                        
+-- Lists products with categories, subcategories, and list prices.                        
 
 SELECT 
     product.productid, 
