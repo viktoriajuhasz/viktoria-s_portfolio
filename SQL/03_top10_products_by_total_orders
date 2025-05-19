@@ -1,4 +1,4 @@
-# Lists top 10 products by total order quantity with descriptions.
+-- Lists top 10 products by total order quantity with descriptions.
 
 WITH pd AS (
     SELECT 
